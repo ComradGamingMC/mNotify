@@ -1,12 +1,15 @@
-fx_version 'adamant'
-game 'gta5'
+fx_version 'cerulean'
+game { 'gta5' }
 
-author 'M. Loveless'
-description 'ml_notify'
-version '1.0'
+name 'mNotify'
+author 'Mathew Loveless <mloveless7@yahoo.com> (https://github.com/ComradGamingMC/)'
+description 'Simple Notify Script used for mScripts'
+Version '1.1'
+url 'https://github.com/ComradGamingMC/mNotify'
 
 client_scripts {
-    'client/main.lua'
+    'client/main.lua',
+    'client/version_checker.lua'
 }
 
 ui_page 'html/ui.html'

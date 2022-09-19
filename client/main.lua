@@ -1,30 +1,30 @@
 local PromptResponse = nil
 
-RegisterNetEvent('ml_notifyy:sendMessage')
-AddEventHandler('ml_notify:sendMessage', function(data)
+RegisterNetEvent('mNotify:sendMessage')
+AddEventHandler('mNotify:sendMessage', function(data)
 	DoCustomHudText(data.type, data.message, data.delay)
 end)
 
-RegisterNetEvent('ml_notify:client:SendAlert')
+RegisterNetEvent('mNotify:client:SendAlert')
 AddEventHandler('ml_notify:client:SendAlert', function(data)
 		DoHudText(data.type, data.text)
 end)
-RegisterNetEvent('ml_notify:client:SendAlert:long')
-AddEventHandler('ml_notify:client:SendAlert:long', function(data)
+RegisterNetEvent('mNotify:client:SendAlert:long')
+AddEventHandler('mNotify:client:SendAlert:long', function(data)
 		DoLongHudText(data.type, data.text)
 end)
-RegisterNetEvent('ml_notify:client:SendAlert:custom')
-AddEventHandler('ml_notify:client:SendAlert:custom', function(data)
+RegisterNetEvent('mNotify:client:SendAlert:custom')
+AddEventHandler('mNotify:client:SendAlert:custom', function(data)
 		DoCustomHudText(data.type, data.text, data.length)
 end)
 
-RegisterNetEvent('ml_notify:client:SendAlert:new')
-AddEventHandler('ml_notify:client:SendAlert:new', function(data)
+RegisterNetEvent('mNotify:client:SendAlert:new')
+AddEventHandler('mNotify:client:SendAlert:new', function(data)
 		DoNewHudText(data.type, data.text, data.length, data.img, data.sticky, data.title, data.icon)
 end)
 
-RegisterNetEvent('ml_notify:client:SendAlert:DoNewHudTextBlink')
-AddEventHandler('ml_notify:client:SendAlert:DoNewHudTextBlink', function(data)
+RegisterNetEvent('mNotify:client:SendAlert:DoNewHudTextBlink')
+AddEventHandler('mNotify:client:SendAlert:DoNewHudTextBlink', function(data)
 	DoNewHudTextBlink(data.type, data.text, data.length, data.img, data.sticky, data.title, data.icon)
 end)
 
@@ -183,41 +183,11 @@ end)
 
 
 RegisterCommand('flash', function()
-	exports['ml_notify']:DoLongHudText('progress', 'Test Notification')
-	exports['ml_notify']:DoLongHudText('info', 'Test Notification')
-	exports['ml_notify']:DoNewHudText('progress', 'Drinking Milkshake', 10000, false, false, "Drinking Milkshake", "glass-whiskey")
-	exports['ml_notify']:DoLongHudText('success', 'Test Notification')
-	exports['ml_notify']:DoLongHudText('warning', 'Test Notification')
+	exports['mNotify']:DoLongHudText('progress', 'Test Notification')
+	exports['mNotify']:DoLongHudText('info', 'Test Notification')
+	exports['mNotify']:DoNewHudText('progress', 'Drinking Milkshake', 10000, false, false, "Drinking Milkshake", "glass-whiskey")
+	exports['mNotify']:DoLongHudText('success', 'Test Notification')
+	exports['mNotify']:DoLongHudText('warning', 'Test Notification')
 	Wait(6000)
 	CloseProgressNotification()
 end)
---[[
-
-
-RegisterCommand('testbar', function()
-	StartProgress(10000, "test")
-end)
-
-RegisterCommand('stopbar', function()
-	CloseProgress()
-end)
-
-
-
-RegisterCommand('testnot', function()
-
-	exports['Streetlife_notify']:DoLongHudText('progress', 'Test Notification')
-	exports['Streetlife_-notify']:DoLongHudText('info', 'Test Notification')
-	exports['Streetlife_notify']:DoLongHudText('error', 'Test Notification')
-	exports['Streetlife_notify']:DoLongHudText('success', 'Test Notification')
-	exports['Streetlife_notify']:DoLongHudText('warning', 'Test Notification')
-
-	Wait(6000)
-	exports['Streetlife_-notify']:DoShortHudText('error', 'Test Notification')
-	exports['Streetlife_notify']:DoHudText('error', 'Test Notification')
-	exports['Streetlife_notify']:DoLongHudText('error', 'Test Notification')
-	
-	
-end)
-
-]]
